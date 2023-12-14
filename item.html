@@ -11,16 +11,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+      /* 툴팁 내부의 배경 색상 변경 */
+      .tooltip-inner {
+        background-color: #0275d8 !important;
+      }
+
+      /* 툴팁 화살표의 색상 변경 */
+      .bs-tooltip-top .arrow::before,
+      .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+        border-top-color: #0275d8 !important;
+      }
+    </style>
   </head>
   <body style="font-family: 'GmarketSansMedium'">
-    <script>
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
-    </script>
     <nav class="navbar navbar-expand-lg" style="background-color: #e3efe5">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -280,7 +284,7 @@
                 href="#"
                 class="btn btn-primary"
                 data-bs-toggle="tooltip"
-                data-bs-title="The last tip!"
+                data-bs-title="오늘의 광고가 모두 &nbsp;소진되었습니다! 내일 다시 방문해주세요:D"
                 >지금 보러가기</a
               >
             </div>
@@ -329,5 +333,13 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
   </body>
 </html>
