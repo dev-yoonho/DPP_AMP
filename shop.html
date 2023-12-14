@@ -11,6 +11,18 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>
+      /* 툴팁 내부의 배경 색상 변경 */
+      .tooltip-inner {
+        background-color: #0275d8 !important;
+      }
+
+      /* 툴팁 화살표의 색상 변경 */
+      .bs-tooltip-top .arrow::before,
+      .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+        border-top-color: #0275d8 !important;
+      }
+    </style>
   </head>
   <body style="font-family: 'GmarketSansMedium'">
     <nav class="navbar navbar-expand-lg" style="background-color: #e3efe5">
@@ -78,7 +90,7 @@
                 <li>
                   <a class="dropdown-item" href="community.html">커뮤니티</a>
                 </li>
-                <li><a class="dropdown-item" href="#">뉴스레터</a></li>
+                <li><a class="dropdown-item" href="news.html">뉴스레터</a></li>
                 <li><a class="dropdown-item" href="#">여론조사</a></li>
                 <li><a class="dropdown-item" href="bet.html">베팅 EVENT</a></li>
                 <li><a class="dropdown-item" href="#">서명운동</a></li>
@@ -221,7 +233,13 @@
                 <h3><span style="color: tomato">BEST</span> 상품</h3>
               </div>
               <div class="col" style="text-align: end">
-                <button class="btn btn-warning btn-lg">
+                <button
+                  class="btn btn-warning btn-lg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="우정모 프리미엄 첫달 무료! 포인트 더블 획득과 광고 제거 혜택 누려보세요"
+                >
                   프리미엄 구독하기
                 </button>
               </div>
@@ -819,5 +837,13 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
   </body>
 </html>
